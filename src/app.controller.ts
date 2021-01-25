@@ -9,4 +9,14 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('cats')
+  getCats(): string {
+    return this.appService.getCats();
+  }
+
+  @Get('roof/cats')
+  getRoofCats(): string {
+    return this.appService.getRoofCats();
+  }
 }
