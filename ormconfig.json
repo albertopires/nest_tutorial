@@ -5,6 +5,6 @@
 	"username": "alberto",
 	"password": "Teste123.",
 	"database": "claro",
-	"entities": ["dist/**/*.entity{.ts,.js}"],
+	"entities": ["Table_a"],
 	"synchronize": true
 }
