@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { readFileSync } from 'fs';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 
@@ -13,7 +14,9 @@ export class UsuarioService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} usuario`;
+    const file: Buffer = readFileSync('/tmp/jupiter.jpg');
+    // process.stdout.write(file);
+    return file;
   }
 
   update(id: number, updateUsuarioDto: UpdateUsuarioDto) {

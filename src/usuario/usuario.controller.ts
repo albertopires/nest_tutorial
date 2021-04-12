@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete, Res } from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
@@ -18,8 +18,10 @@ export class UsuarioController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.usuarioService.findOne(+id);
+  findOne(@Param('id') id: string, @Res() response) {
+    response.append('Content-Type', 'image/jpg');
+    response.status(200).send(this.usuarioService.findOne(+id));
+    // return this.usuarioService.findOne(+id);
   }
 
   @Put(':id')

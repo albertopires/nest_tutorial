@@ -8,7 +8,7 @@ import { CustomerService } from './customer/customer.service';
 import { UsuarioModule } from './usuario/usuario.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(),CustomerModule, UsuarioModule],
+  imports: [TypeOrmModule.forRoot(), CustomerModule, UsuarioModule],
   controllers: [AppController, CustomerController],
   providers: [AppService, CustomerService],
 })
