@@ -17,6 +17,15 @@ export class UsuarioController {
     return this.usuarioService.findAll();
   }
 
+  @Get('thumb')
+  async getThumbnail(@Res() response) {
+    const thumb = await this.usuarioService.getThumbnail();
+    console.log(thumb.toString('base64'));
+    // console.log(thumb);
+    response.append('Content-Type', 'image/jpg');
+    response.status(200).send(thumb);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string, @Res() response) {
     response.append('Content-Type', 'image/jpg');
